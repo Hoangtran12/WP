@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         >
           <Header />
           {children}
+          <Hero />
           <Footer />
         </ThemeProvider>
       </body>

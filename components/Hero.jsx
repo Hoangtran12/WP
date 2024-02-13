@@ -1,31 +1,33 @@
+
 import React from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { TypewriterEffect } from "./ui/typewriter-effect";
 import { Download, Send } from "lucide-react";
 
-import { BsMouse } from "react-icons/bs";
 const Hero = () => {
   return (
-    <section className="py-12 xl:py-24 h-[84vh] xl:pt-28 bg-pink-200 bg-no-repeat bg-bottom dark:bg-transparent">
-      <div className="container mx-auto">
-        <div className="flex justify-between gap-x-8">
-          <div>
-            text
-            <div>
-              <h1 className="flex h1">
-                Hi <span class="animate-waving-hand">👋🏻</span>, I'm
-                Hoang Tran!
-              </h1>
-            </div>
-          </div>
-          <div>imgage</div>
+    <section>
+      <div>
+        <div className="py-6 text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]">
+          About me
         </div>
-        <div className="hidden md:flex absolute left-2/4 bottom-44 xl:bottom-12 animate-bounce">
-          <BsMouse className="text-3xl text-primary" />
+        <div>
+          <p className="subtitle max-w-[490px] mx-auto xl:mx-0"> Hero</p>
+          <div className="flex flex-col gap-y-3 md:flex-row gap-x-3 mx:auto xl:mx-0 mb-12">
+            <Link href="/contact">
+              <Button className="gap-x-2">
+                Contact Me <Send size={18} />
+              </Button>
+              <Button variant="secondary" className="gap-x-2">
+                Resume <Download size={18} />
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
   );
-};
+}
 
-export default Hero;
+export default Hero

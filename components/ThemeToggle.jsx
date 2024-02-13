@@ -11,9 +11,13 @@ const ThemeToggle = () => {
 
   return (
     <div>
-      <Button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-        <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 bg" />
-        <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <Button
+        variant="outline"
+        size="icon"
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      >
+        <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 hover:text-primary transition-all dark:-rotate-90 dark:scale-0 bg" />
+        <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 hover:text-primary transition-all dark:rotate-0 dark:scale-100" />
         <span className="sr-only">Toggle theme</span>
       </Button>
     </div>

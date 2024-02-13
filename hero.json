@@ -1,0 +1,10 @@
+{
+  "Greeting": "Hi,",
+  "Introduction": "I'm",
+  "Details": {
+    "Person": {
+      "name": "Hoang Tran",
+      "position": "Software Engineering Student"
+    }
+  }
+}

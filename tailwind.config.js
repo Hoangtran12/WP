@@ -31,6 +31,9 @@ module.exports = {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        tertiary: {
+          DEFAULT: "hsl(var(--tertiary))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -84,6 +87,9 @@ module.exports = {
       animation: {
         "waving-hand": "wave 2s linear infinite",
       },
+      backgroundImage: {
+        cover_bg: 'url(/bgshape.png)',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
