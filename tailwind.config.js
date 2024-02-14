@@ -88,8 +88,10 @@ module.exports = {
         "waving-hand": "wave 2s linear infinite",
       },
       backgroundImage: {
-        cover_bg: 'url(/bgshape.png)',
-      }
+        cover_bg: "url(/bgshapeO.svg)",
+        cover_bg_main: "url(/bgshapeB.svg)",
+        cover_bg_secondary: "url(/bgshapeW.svg)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
