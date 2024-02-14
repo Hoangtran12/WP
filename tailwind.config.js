@@ -91,6 +91,8 @@ module.exports = {
         cover_bg: "url(/bgshapeO.svg)",
         cover_bg_main: "url(/bgshapeB.svg)",
         cover_bg_secondary: "url(/bgshapeW.svg)",
+        about_bg_main: "url(/abshapeW.svg)",
+        about_bg_secondary: "url(/abshapeB.svg)",
       },
     },
   },
