@@ -4,23 +4,26 @@ import { Button } from "./ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Download, Send, School2 } from "lucide-react";
 import AboutImg from "./AboutImg";
-const qualification = [
+const qualificationPart = [
   {
     title: "education",
     data: [
       {
         university: "The University of Texas at Dallas",
         major: "Bachelor of Science",
+        courseRelated:
+          "Data Structures and Algorithms, Linux & Unix, Database, Operating System, Software Engineering,",
         graduation: "Expected graduate May 2025",
       },
     ],
   },
   {
-    title: "work experience",
+    title: "job related",
     data: [
       {
         company: "Samsung Semiconductor",
         role: "Laser Testing",
+        desc: "sadsadsadsadas",
         years: "May 2019-Aug 2019",
       },
     ],
@@ -34,7 +37,7 @@ const skillData = [
         name: "JAVA, C, and Python",
       },
       {
-        name: "Programming",
+        name: "Dynamic Programming",
       },
       {
         name: "HTML, Javascript, and CSS",
@@ -45,7 +48,7 @@ const skillData = [
     ],
   },
   {
-    title: "Tool and Software",
+    title: "Tools and Software",
     data: [
       {
         icon: <Download size={20} />,
@@ -80,10 +83,10 @@ const About = () => {
                   className="w-[162px] xl:w-auto"
                   value="qualifications"
                 >
-                  Education
+                  Journey
                 </TabsTrigger>
-                <TabsTrigger className="w-[162px] xl:w-auto" value="education">
-                  Work Experience
+                <TabsTrigger className="w-[162px] xl:w-auto" value="expertise">
+                  Expertise
                 </TabsTrigger>
               </TabsList>
               <div className="txt-lg mt-12 xl:mt-8">
@@ -91,6 +94,7 @@ const About = () => {
                   <div className="text-center xl:text-left">
                     <h3 className="h3 mb-4">Few things about me:</h3>
                     <p className="subtitle max-w-xl mx-auto xl:mx-0 ">
+                      Call me Justin to make life easier. <br />
                       Passionate and dedicated Computer Science student.
                       <br />
                       Super interesting in solving complex problem. <br />
@@ -118,24 +122,137 @@ const About = () => {
                 </TabsContent>
                 <TabsContent value="qualifications">
                   <div>
-                    <h3 className="h3 mb-8 text-center xl:text-left">
-                      Education Journey
-                    </h3>
-                    <div>
-                      <div>
+                    <div className="grid md:grid-cols-2 gap-y-8">
+                      <div className="flex flex-col gap-y-8">
                         <div className="flex gap-x-4 items-center text-[22px] text-primary">
                           <School2 />
                           <h4 className="capitalize font-medium">
-                            {getData(qualification, "education").title}
+                            {getData(qualificationPart, "education").title}
                           </h4>
                         </div>
-                        <div></div>
+                        <div className="flex flex-col gap-y-8">
+                          {getData(qualificationPart, "education").data.map(
+                            (item, index) => {
+                              const {
+                                university,
+                                major,
+                                courseRelated,
+                                graduation,
+                              } = item;
+                              return (
+                                <div
+                                  className="flex gap-x-8 group:"
+                                  key={index}
+                                >
+                                  <div>
+                                    <div className="font-semibold text-xl leading-none mb-2">
+                                      {university}
+                                    </div>
+                                    <div className="text-lg leading-none text-muted-foreground mb-4">
+                                      {major}
+                                    </div>
+                                    <div className="text-lg leading-none text-muted-foreground mb-4">
+                                      {courseRelated}
+                                    </div>
+                                    <div className="text-base font-medium">
+                                      {graduation}
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            }
+                          )}
+                        </div>
                       </div>
-                      <div>efdkfjd</div>
+                      <div className="flex flex-col gap-y-8">
+                        <div className="flex gap-x-4 items-center text-[22px] text-primary">
+                          <School2 />
+                          <h4 className="capitalize font-medium">
+                            {getData(qualificationPart, "job related").title}
+                          </h4>
+                        </div>
+                        <div>
+                          {getData(qualificationPart, "job related").data.map(
+                            (item, index) => {
+                              const { company, role, desc, years } = item;
+                              return (
+                                <div
+                                  className="flex gap-x-8 group:"
+                                  key={index}
+                                >
+                                  <div>
+                                    <div className="font-semibold text-xl leading-none mb-2">
+                                      {company}
+                                    </div>
+                                    <div className="text-lg leading-none text-muted-foreground mb-4">
+                                      {role}
+                                    </div>
+                                    <div className="text-lg leading-none text-muted-foreground mb-4">
+                                      {desc}
+                                    </div>
+                                    <div className="text-base font-medium">
+                                      {years}
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            }
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </TabsContent>
-                <TabsContent value="education">perssdsdsonal</TabsContent>
+                <TabsContent value="expertise">
+                  <div className="text-center xl:text-left">
+                    <h4 className="font-semibold text-xl leading-none mb-2">
+                      Programming Languages
+                    </h4>
+                    <div className="mb-16">
+                      <div className="border-b border-border mb-4"></div>
+                      <div>
+                        {getData(skillData, "Programming Language").data.map(
+                          (item, index) => {
+                            const { name } = item;
+                            return (
+                              <div
+                                className="w-2/4 text-center xl:text-left mx-auto xl:mx-0"
+                                key={index}
+                              >
+                                <div className="text-lg leading-none text-muted-foreground mb-4">
+                                  {name}
+                                </div>
+                              </div>
+                            );
+                          }
+                        )}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-xl leading-none mb-2">
+                        App
+                      </h4>
+                      <div className="border-b border-border mb-4"></div>
+                      <div className="flex gap-x-8 justify-center xl:justify-start">
+                        {getData(skillData, "Tools and Software").data.map(
+                          (item, index) => {
+                            const { icon } = item;
+                            return (
+                              <div
+                                className="w-2/4 text-center xl:text-left mx-auto xl:mx-0"
+                                key={index}
+                              >
+                                <div className="text-lg leading-none text-muted-foreground mb-4">
+                                  {icon}
+                                </div>
+                              </div>
+                            );
+                          }
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
               </div>
             </Tabs>
           </div>

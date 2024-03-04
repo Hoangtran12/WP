@@ -6,8 +6,8 @@ const links = [
   { path: "/", name: "home" },
   { path: "/projects", name: "projects" },
   { path: "/contact", name: "contact" },
-  { path: "/education", name: "education" },
-  { path: "/skills&abilities", name: "skills&abilities" },
+  // { path: "/education", name: "education" },
+  // { path: "/skills&abilities", name: "skills&abilities" },
 ];
 const NavBar = ({ containerStyles, linkStyles, underlineStyles }) => {
   const path = usePathname();

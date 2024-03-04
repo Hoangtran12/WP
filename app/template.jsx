@@ -21,7 +21,7 @@ const template = ({ children }) => {
       >
         {children}
       </motion.main>
-      <div className="h-[4000px]"></div>
+      {/* <div className="h-[4000px]"></div> */}
     </>
   );
 };

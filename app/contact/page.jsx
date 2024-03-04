@@ -43,10 +43,10 @@ const contact = () => {
               {info.map((item, index) => {
                 return (
                   <div
-                    className="flex items-center gap-x-4 mx-auto xl:mx-0"
+                    className="flex items-center gap-x-4 mx-auto xl:mx-0 text-secondary-foreground"
                     key={index}
                   >
-                    <div className="text-primary">{item.icon}</div>
+                    <div>{item.icon}</div>
                     <div>{item.text}</div>
                   </div>
                 );
