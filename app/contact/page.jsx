@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { UserRound, PhoneForwarded, Mails, Github, Linkedin  } from "lucide-react";
+import { UserRound, PhoneForwarded, Mails, Github, Linkedin} from "lucide-react";
 import { motion } from "framer-motion";
 import { LampContainer } from "../../components/ui/lamp";
 const info = [
@@ -14,15 +14,15 @@ const info = [
   },
   {
     icon: <Mails size={20} />,
-    text: "hoangtranjan12@gmail.com",
+    email: "hoangtranjan12@gmail.com",
   },
   {
     icon: <Github size={20} />,
-    text: "https://github.com/Hoangtran12",
+    url: "https://github.com/Hoangtran12",
   },
   {
     icon: <Linkedin size={20} />,
-    text: "https://www.linkedin.com/in/hoangtran12/",
+    url: "https://www.linkedin.com/in/hoangtran12/",
   },
 ];
 const contact = () => {
@@ -47,7 +47,26 @@ const contact = () => {
                     key={index}
                   >
                     <div>{item.icon}</div>
-                    <div>{item.text}</div>
+                    <div>
+                      {item.url ? (
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          className="hover:text-blue-500 hover:underline"
+                        >
+                          {item.url}
+                        </a>
+                      ) : item.email ? (
+                        <a
+                          href={`mailto:${item.email}`}
+                          className="hover:text-blue-500 hover:underline"
+                        >
+                          {item.email}
+                        </a>
+                      ) : (
+                        item.text
+                      )}
+                    </div>
                   </div>
                 );
               })}

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { GanttChartSquare } from "lucide-react";
+import { GanttChartSquare, CandlestickChart, Search, Route } from "lucide-react";
 import {
   Cards,
   CardContent,
@@ -13,13 +13,23 @@ import {
 const projectsData = [
   {
     icon: <GanttChartSquare size={72} strokewWidth={0.8} />,
-    title: "School Project",
-    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident recusandae veniam dolore sint illum itaque quidem laudantium quibusdam impedit inventore illo quod unde, maxime dolorem, dicta voluptatibus dignissimos nesciunt sed.",
+    title: "Web-portfolio",
+    desc: "Developed a fully responsive personal portfolio website using React, CSS, and HTML. Implemented dynamic backend functionality with NodeJS, including user authentication and content management. Deployed on Cloudflare for optimized performance and security.",
   },
   {
-    icon: <GanttChartSquare size={72} strokewWidth={0.8} />,
-    title: "Self Project",
-    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident recusandae veniam dolore sint illum itaque quidem laudantium quibusdam impedit inventore illo quod unde, maxime dolorem, dicta voluptatibus dignissimos nesciunt sed.",
+    icon: <CandlestickChart size={72} strokewWidth={0.8} />,
+    title: "Trading strategy",
+    desc: "Developed and coded custom trading strategies using PineCode. Conducted back-testing of algorithms on historical market data to ensure profitability. Managed real-time trading with a focus on technical analysis and risk management.",
+  },
+  {
+    icon: <Search size={72} strokewWidth={0.8} />,
+    title: "Search Engine",
+    desc: "Collaborated on a school project to build a search engine webpage. Utilized React for the user interface and SQL for backend data management. Implemented database schemes for indexing and query optimization to ensure fast and relevant search results.",
+  },
+  {
+    icon: <Route size={72} strokewWidth={0.8} />,
+    title: "Flight Planner",
+    desc: "Implemented an exhaustive flight search algorithm using Java, employing iterating backtracking with a stack to track and maintain information efficiently. Developed as a school project to demonstrate algorithmic expertise and advanced problem-solving skills.",
   },
 ];
 const projects = () => {

@@ -18,13 +18,19 @@ const qualificationPart = [
     ],
   },
   {
-    title: "job related",
+    title: "experience",
     data: [
       {
         company: "Samsung Semiconductor",
         role: "Laser Testing",
-        desc: "sadsadsadsadas",
+        desc: "Assisted senior engineers with laser integration processes, conducted component testing, and ensured adherence to quality standards. Gained hands-on experience with laser technology and contributed to team projects.",
         years: "May 2019-Aug 2019",
+      },
+      {
+        company: "Self-Employed",
+        role: "Day Trader",
+        desc: "Developed and coded custom trading strategies using Python. Back-tested algorithms on historical market data to ensure profitability. Managed real-time trading of stocks and cryptocurrencies, focusing on technical analysis, risk management, and strategy optimization.",
+        years: "May 2021-Present",
       },
     ],
   },
@@ -93,12 +99,17 @@ const About = () => {
                 <TabsContent value="personal">
                   <div className="text-center xl:text-left">
                     <h3 className="h3 mb-4">Few things about me:</h3>
-                    <p className="subtitle max-w-xl mx-auto xl:mx-0 ">
-                      Call me Justin to make life easier. <br />
-                      Passionate and dedicated Computer Science student.
+                    <p className="subtitle max-w-xl mx-auto xl:mx-0">
+                      Hey there! I’m Hoang Tran, a Computer Science student with
+                      a curiosity for solving complex challenges.
                       <br />
-                      Super interesting in solving complex problem. <br />
-                      Strategically plan projects with dynamic programming.
+                      My passion lies in crafting innovative solutions and
+                      strategically planning projects that push the boundaries
+                      of dynamic programming. <br />
+                      Whether it's developing cutting-edge applications or
+                      diving into the depths of algorithmic trading, there will be an opportunity to make it work and bring it to reality.<br />
+                      I’m always excited about new opportunities to learn, grow,
+                      and make a meaningful impact in the tech world.
                     </p>
                     <div className="border-b border-border my-8"></div>
                     <div className="grid xl:grid-cols-2 gap-4 mb-12">
@@ -168,11 +179,11 @@ const About = () => {
                         <div className="flex gap-x-4 items-center text-[22px] text-primary">
                           <School2 />
                           <h4 className="capitalize font-medium">
-                            {getData(qualificationPart, "job related").title}
+                            {getData(qualificationPart, "experience").title}
                           </h4>
                         </div>
                         <div>
-                          {getData(qualificationPart, "job related").data.map(
+                          {getData(qualificationPart, "experience").data.map(
                             (item, index) => {
                               const { company, role, desc, years } = item;
                               return (
