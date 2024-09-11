@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Download, Send, School2 } from "lucide-react";
 import AboutImg from "./AboutImg";
+import avatar from "../public/profile.png";
 const qualificationPart = [
   {
     title: "education",
@@ -76,7 +77,7 @@ const About = () => {
           <div className="hidden xl:flex flex-1 relative">
             <AboutImg
               containerStyles="w-[300px] h-[400px] bg-no-repeat relative"
-              imgSrc="/profile.png"
+              imgSrc="/public/profile.png"
             />
           </div>
           <div className="flex-1">
@@ -107,7 +108,9 @@ const About = () => {
                       strategically planning projects that push the boundaries
                       of dynamic programming. <br />
                       Whether it's developing cutting-edge applications or
-                      diving into the depths of algorithmic trading, there will be an opportunity to make it work and bring it to reality.<br />
+                      diving into the depths of algorithmic trading, there will
+                      be an opportunity to make it work and bring it to reality.
+                      <br />
                       I’m always excited about new opportunities to learn, grow,
                       and make a meaningful impact in the tech world.
                     </p>
