@@ -77,7 +77,7 @@ const About = () => {
           <div className="hidden xl:flex flex-1 relative">
             <AboutImg
               containerStyles="w-[300px] h-[400px] bg-no-repeat relative"
-              imgSrc="../public/profile.png"
+              imgSrc="/profile.png"
             />
           </div>
           <div className="flex-1">
