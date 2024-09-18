@@ -1,6 +1,11 @@
 "use client";
 import React from "react";
-import { GanttChartSquare, CandlestickChart, Search, Route } from "lucide-react";
+import {
+  GanttChartSquare,
+  CandlestickChart,
+  Search,
+  Route,
+} from "lucide-react";
 import {
   Cards,
   CardContent,

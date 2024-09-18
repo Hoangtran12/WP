@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { TypewriterEffect } from "./ui/typewriter-effect";
 import { Download, Send } from "lucide-react";
 import { BsMouse } from "react-icons/bs";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 const words = [
   {
     text: "I'm",
@@ -41,6 +42,9 @@ const Cover = () => {
         </div>
         <div className="hidden md:flex absolute left-2/4 bottom-44 xl:bottom-12 animate-bounce">
           <BsMouse className="text-5xl text-primary" />
+        </div>
+        <div className="md:hidden md:flex absolute left-2/4 bottom-44 xl:bottom-12 animate-bounce mt-0">
+          <MdKeyboardDoubleArrowDown className="text-10md text-primary" />
         </div>
       </div>
     </section>

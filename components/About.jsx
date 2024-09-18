@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Download, Send, School2 } from "lucide-react";
+import { Download, Send, School2, Briefcase } from "lucide-react";
 import {
   SiPostgresql,
   SiFigma,
@@ -21,9 +21,9 @@ const qualificationPart = [
     data: [
       {
         university: "The University of Texas at Dallas",
-        major: "Bachelor of Science",
+        major: "Bachelor of Science, Software Engineer",
         courseRelated:
-          "Data Structures and Algorithms, Linux & Unix, Database, Operating System, Software Engineering,",
+          "Data Structures and Algorithms, Linux & Unix, Operating System, Software Engineering, AI, Requirement Engineering, Database Management, Software Architecture... ",
         graduation: "Expected graduate May 2025",
       },
     ],
@@ -52,21 +52,15 @@ const skillData = [
     data: [
       {
         name: "JAVA, C, and Python",
+        type: "Dynamic Programming, Algorithms",
       },
       {
-        name: "Dynamic Programming, Algorithms",
-      },
-      {
-        name: "HTML, Javascript, Typescript, and CSS",
-      },
-      {
-        name: "Web-development",
+        name: "HTML, Javascript, Typescript, JSON and CSS",
+        type: "Web-development",
       },
       {
         name: "SQL, MySQL",
-      },
-      {
-        name: "Query & Database Management",
+        type: "Query & Database Management",
       },
     ],
   },
@@ -101,7 +95,7 @@ const skillData = [
   },
 ];
 const shuffleArray = (array) => {
-  return array.sort(() => Math.random() - 0.5);
+  return array.sort(() => Math.random() - 1.66);
 };
 
 const About = () => {
@@ -141,7 +135,7 @@ const About = () => {
                 <TabsContent value="personal">
                   <div className="text-center xl:text-left">
                     <h3 className="h3 mb-4">Few things about me:</h3>
-                    <p className="subtitle max-w-xl mx-auto xl:mx-0">
+                    <p className="subtitle max-w-xl mx-auto xl:mx-1">
                       Hey there! I’m Hoang Tran, a Computer Science student with
                       a curiosity for solving complex challenges.
                       <br />
@@ -196,21 +190,23 @@ const About = () => {
                               } = item;
                               return (
                                 <div
-                                  className="flex gap-x-8 group:"
+                                  className="flex flex-wrap gap-x-8 group:"
                                   key={index}
                                 >
                                   <div>
                                     <div className="font-semibold text-xl leading-none mb-2">
                                       {university}
                                     </div>
-                                    <div className="text-lg leading-none text-muted-foreground mb-4">
+                                    <div className="text-lg leading-none text-muted-foreground my-4 mx-4">
                                       {major}
+                                      <div className="my-3">{graduation}</div>
                                     </div>
-                                    <div className="text-lg leading-none text-muted-foreground mb-4">
-                                      {courseRelated}
-                                    </div>
+
                                     <div className="text-base font-medium">
-                                      {graduation}
+                                      Course Taken
+                                    </div>
+                                    <div className="text-lg leading-none text-muted-foreground my-4 mx-4">
+                                      {courseRelated}
                                     </div>
                                   </div>
                                 </div>
@@ -221,7 +217,7 @@ const About = () => {
                       </div>
                       <div className="flex flex-col gap-y-8">
                         <div className="flex gap-x-4 items-center text-[22px] text-primary">
-                          <School2 />
+                          <Briefcase />
                           <h4 className="capitalize font-medium">
                             {getData(qualificationPart, "experience").title}
                           </h4>
@@ -242,11 +238,11 @@ const About = () => {
                                     <div className="text-lg leading-none text-muted-foreground mb-4">
                                       {role}
                                     </div>
-                                    <div className="text-lg leading-none text-muted-foreground mb-4">
-                                      {desc}
-                                    </div>
                                     <div className="text-base font-medium">
                                       {years}
+                                    </div>
+                                    <div className="text-lg leading-none text-muted-foreground my-4 mx-4">
+                                      {desc}
                                     </div>
                                   </div>
                                 </div>
@@ -268,12 +264,15 @@ const About = () => {
                       <div>
                         {getData(skillData, "Programming Language").data.map(
                           (item, index) => {
-                            const { name } = item;
+                            const { name, type } = item;
                             return (
                               <div
                                 className="w-2/4 text-center xl:text-left mx-auto xl:mx-0"
                                 key={index}
                               >
+                                <div className="text-base font-medium">
+                                  {type}
+                                </div>
                                 <div className="text-lg leading-none text-muted-foreground mb-4">
                                   {name}
                                 </div>
@@ -288,14 +287,14 @@ const About = () => {
                         App
                       </h4>
                       <div className="border-b border-border mb-4"></div>
-                      <div className="flex gap-x-8 justify-center xl:justify-start">
+                      <div className="flex flex-wrap items-center gap-x-12 justify-center">
                         {shuffleArray(
                           getData(skillData, "Tools and Software").data
                         ).map((item, index) => {
                           const { icon } = item;
                           return (
                             <div
-                              className="w-1/4 text-center xl:text-left mx-auto xl:mx-0"
+                              className="w-1/12 text-center xl:text-left mx-auto xl:mx-0"
                               key={index}
                             >
                               <div className="text-lg leading-none text-muted-foreground mb-4">
