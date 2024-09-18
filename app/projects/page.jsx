@@ -19,7 +19,7 @@ const projectsData = [
   {
     icon: <CandlestickChart size={72} strokewWidth={0.8} />,
     title: "Trading strategy",
-    desc: "Developed and coded custom trading strategies using PineCode. Conducted back-testing of algorithms on historical market data to ensure profitability. Managed real-time trading with a focus on technical analysis and risk management.",
+    desc: "Developing and code custom trading strategies using Pine Script. Back-testing of algorithms on historical market data to ensure high WR and profitable. Managing real-time trading with a focus on technical analysis and risk management.",
   },
   {
     icon: <Search size={72} strokewWidth={0.8} />,
@@ -36,7 +36,7 @@ const projects = () => {
   return (
     <section className="mb-12 xl:mb-36">
       <div className="container mx-auto">
-        <h2 className="section-title mb-4 xl:mb-16 text-center mx-auto py-6">
+        <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto py-6">
           Projects
         </h2>
         <div className="grid xl:grid-cols-3 justify-center gap-y-12 xl:gap-y-32">
@@ -47,13 +47,15 @@ const projects = () => {
                 key={index}
               >
                 <CardHeader className="text-primary absolute -top-[60px]">
-                  <div className="w-[140px] h-[80px] bg-background flex justify-center items-center">
+                  <div className="w-[10vw] h-[7vw] xl:w-[140px] xl:h-[80px] bg-background flex justify-center items-center">
                     {item.icon}
                   </div>
                 </CardHeader>
                 <CardContent className="text-center">
                   <CardTitle className="mb-4">{item.title} </CardTitle>
-                  <CardDescription className='text-lg'>{item.desc}</CardDescription>
+                  <CardDescription className="text-lg">
+                    {item.desc}
+                  </CardDescription>
                 </CardContent>
               </Cards>
             );

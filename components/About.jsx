@@ -3,8 +3,18 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Download, Send, School2 } from "lucide-react";
+import {
+  SiPostgresql,
+  SiFigma,
+  SiVisualstudio,
+  SiPython,
+  SiLinux,
+  SiGithub,
+  SiCloudflare,
+} from "react-icons/si";
+import { DiNetbeans } from "react-icons/di";
 import AboutImg from "./AboutImg";
-import avatar from "../public/profile.png";
+
 const qualificationPart = [
   {
     title: "education",
@@ -44,13 +54,19 @@ const skillData = [
         name: "JAVA, C, and Python",
       },
       {
-        name: "Dynamic Programming",
+        name: "Dynamic Programming, Algorithms",
       },
       {
-        name: "HTML, Javascript, and CSS",
+        name: "HTML, Javascript, Typescript, and CSS",
       },
       {
         name: "Web-development",
+      },
+      {
+        name: "SQL, MySQL",
+      },
+      {
+        name: "Query & Database Management",
       },
     ],
   },
@@ -58,11 +74,36 @@ const skillData = [
     title: "Tools and Software",
     data: [
       {
-        icon: <Download size={20} />,
+        icon: <SiFigma size={30} />,
+      },
+      {
+        icon: <SiPostgresql size={30} />,
+      },
+      {
+        icon: <SiVisualstudio size={30} />,
+      },
+      {
+        icon: <SiPython size={30} />,
+      },
+      {
+        icon: <SiLinux size={30} />,
+      },
+      {
+        icon: <DiNetbeans size={30} />,
+      },
+      {
+        icon: <SiGithub size={30} />,
+      },
+      {
+        icon: <SiCloudflare size={30} />,
       },
     ],
   },
 ];
+const shuffleArray = (array) => {
+  return array.sort(() => Math.random() - 0.5);
+};
+
 const About = () => {
   const getData = (arr, title) => {
     return arr.find((item) => item.title === title);
@@ -122,7 +163,7 @@ const About = () => {
                             Contact Me <Send size={18} />
                           </Button>
                         </Link>
-                        <Link href="">
+                        <Link href="/dev-resume.pdf">
                           <Button
                             variant="secondary"
                             className="gap-x-4 hover:bg-foreground hover:text-secondary"
@@ -248,21 +289,21 @@ const About = () => {
                       </h4>
                       <div className="border-b border-border mb-4"></div>
                       <div className="flex gap-x-8 justify-center xl:justify-start">
-                        {getData(skillData, "Tools and Software").data.map(
-                          (item, index) => {
-                            const { icon } = item;
-                            return (
-                              <div
-                                className="w-2/4 text-center xl:text-left mx-auto xl:mx-0"
-                                key={index}
-                              >
-                                <div className="text-lg leading-none text-muted-foreground mb-4">
-                                  {icon}
-                                </div>
+                        {shuffleArray(
+                          getData(skillData, "Tools and Software").data
+                        ).map((item, index) => {
+                          const { icon } = item;
+                          return (
+                            <div
+                              className="w-1/4 text-center xl:text-left mx-auto xl:mx-0"
+                              key={index}
+                            >
+                              <div className="text-lg leading-none text-muted-foreground mb-4">
+                                {icon}
                               </div>
-                            );
-                          }
-                        )}
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>
